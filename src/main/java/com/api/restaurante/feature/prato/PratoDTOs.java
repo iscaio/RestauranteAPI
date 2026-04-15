@@ -10,7 +10,8 @@ import lombok.Data;
 public class PratoDTOs {
     
     @Data
-    public static class request{
+    @Builder
+    public static class Request{
         @NotBlank(message = "O nome do prato é obrigatorio")
         private String nomePrato;
         private String categoria;
@@ -19,10 +20,9 @@ public class PratoDTOs {
 
     }
 
-
     @Data
     @Builder
-    public static class Responde {
+    public static class Response {
         private long id;
         private String nomePrato;
         private String categoria;
