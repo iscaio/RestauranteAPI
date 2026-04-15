@@ -30,7 +30,7 @@ public class PratoController {
     public ResponseEntity<PratoDTOs.Response> buscarPorId(@PathVariable Long id){
         return ResponseEntity.ok(pratoService.buscarPorId(id));
     }
-
+    
     @PostMapping
     public ResponseEntity<PratoDTOs.Response> criar(@Valid @RequestBody PratoDTOs.Request request){
         PratoDTOs.Response novoPrato = pratoService.criar(request);

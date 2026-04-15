@@ -1,12 +1,13 @@
 package com.api.restaurante.feature.prato;
 
+import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
-import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -51,6 +52,5 @@ public class PratoService {
                 .preco(request.getPreco())
                 .build();
     }
-
 
 }
