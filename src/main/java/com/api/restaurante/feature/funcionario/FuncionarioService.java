@@ -23,7 +23,8 @@ public class FuncionarioService {
 
     @Transactional(readOnly = true)
     public FuncionarioDTOs.Response buscarPorId(Long id){
-        Funcionario funcionario = funcionarioRepository.findById(id)
+        Funcionario funcionario = funcionarioRepository
+            .findById(id)
             .orElseThrow(()-> new EntityNotFoundException("Funcionario ID" + id + "não encontrado"));
         
         return mapToResponse(funcionario);

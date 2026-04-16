@@ -20,7 +20,11 @@ public class ItemPedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
  
-    @Column(name= "pedido_id")
+    @Column(name = "pedido_id")
+    @NotNull(message = "O ID do pedido é obrigatório")
+    private Long pedidoId;
+    
+    @Column(name= "prato_id")
     @NotNull(message = "O ID do prato é obritório")
     private Long pratoId;
  
