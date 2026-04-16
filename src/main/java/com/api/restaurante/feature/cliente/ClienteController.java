@@ -31,5 +31,3 @@ public class ClienteController {
         return ResponseEntity.status(HttpStatus.CREATED).body(novoCliente);
     }
 }
-
-//aaaaaaaaaaaaaaaaa
