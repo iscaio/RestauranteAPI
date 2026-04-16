@@ -1,4 +1,4 @@
-# 🍽️ Sistema de Gerenciamento de Restaurante
+# Sistema de Gerenciamento de Restaurante
 
 Este projeto consiste em um sistema para gestão de operações de um restaurante, abrangendo desde o cadastro de clientes e funcionários até o controle de pedidos e pratos. O foco principal desta etapa é a modelagem de dados através do **Diagrama Entidade-Relacionamento (DER)**.
 

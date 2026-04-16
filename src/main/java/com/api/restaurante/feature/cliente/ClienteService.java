@@ -38,7 +38,7 @@ public class ClienteService {
         return mapToResponse(cliente);
     }
 
-    // Mapeamentos
+    // Map
     private ClienteDTOs.Response mapToResponse(Cliente cliente) {
         return ClienteDTOs.Response.builder()
                 .cpf(cliente.getCpf())
