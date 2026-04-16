@@ -1,7 +1,9 @@
 package com.api.restaurante.feature.pedido;
 
-import com.api.restaurante.feature.prato.Prato;
+import java.math.BigDecimal;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.*;
  
 @Entity
@@ -18,14 +20,21 @@ public class ItemPedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
  
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "pedidoId", nullable = false)
-    private Pedido pedido;
+    @Column(name= "pedido_id")
+    @NotNull(message = "O ID do prato é obritório")
+    private Long pratoId;
  
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "pratoId", nullable = false)
-    private Prato prato;
- 
-    @Column(nullable = false)
+    @Positive(message = "A quantidade deve ser positiva")
     private Integer quantidade;
+ 
+    private BigDecimal precoUnitarioNoPedido;
+    private BigDecimal subtotal;
+
+    @PrePersist
+    @PreUpdate
+    public void calcularSubtotal(){
+        if (precoUnitarioNoPedido != null && quantidade != null){
+            this.subtotal = precoUnitarioNoPedido.multiply(BigDecimal.valueOf(quantidade));
+        }
+    }
 }

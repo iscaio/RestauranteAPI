@@ -36,6 +36,7 @@ public class PratoService {
         return mapToResponse(prato);
     }
 
+    // Map
     private PratoDTOs.Response mapToResponse(Prato prato) {
         return PratoDTOs.Response.builder()
                 .id(prato.getId())

@@ -26,13 +26,11 @@ public class FuncionarioController {
     @GetMapping
     public ResponseEntity<List<FuncionarioDTOs.Response>> listarTodos(){
         return ResponseEntity.ok(funcionarioService.buscarTodos());
-
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<FuncionarioDTOs.Response> buscarPorId(@PathVariable Long id){
         return ResponseEntity.ok(funcionarioService.buscarPorId(id));
-
     }
 
     @PostMapping
